@@ -42,7 +42,8 @@ endfunction
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set ruler                     " Show line numbers
+set ruler                     " Show line numbers in statusbar
+set number                    " Show line numbers in gutter
 set ignorecase                " Ignore case when searching
 set showmatch                 " Highlight matching brackets
 syntax enable                 " Enable syntax highlighting
@@ -55,7 +56,9 @@ set noswapfile
 set shiftwidth=4              " 1 tab == 4 spaces
 set tabstop=4
 
+
 " Vundle Stuff
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -70,7 +73,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 
 " A great color scheme, especially dark
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 " Adding REPL behavior
 Plugin 'jpalardy/vim-slime'
@@ -80,7 +83,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
 " That sweet R functionality
-Bundle 'jalvesaq/Nvim-R'
+Bundle 'vim-scripts/Vim-R-plugin'
 
 " Cool statusbar (external dependency on fonts)
 Plugin 'bling/vim-airline'
@@ -107,9 +110,11 @@ filetype plugin indent on    " required
 " Configuration of Plugins
 
 " Color theme
-"syntax enable
-"set background=dark
-"colorscheme solarized
-
+if has('gui_running')
+	syntax enable
+	set background=dark
+	colorscheme solarized
+endif
+	
 " Slime configuration
 let g:slime_target = "conemu"
