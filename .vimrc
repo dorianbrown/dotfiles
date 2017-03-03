@@ -1,4 +1,4 @@
-" Standard use stuff for VIM"
+"Standard use stuff for VIM"
 
 
 set nocompatible              " be iMproved, required
@@ -17,6 +17,12 @@ set noswapfile
 set shiftwidth=4              " 1 tab == 4 spaces
 set tabstop=4
 
+" Remap movement keys to normal place
+
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
 
 " Vundle Stuff
 
@@ -71,8 +77,4 @@ filetype plugin indent on    " required
 " Configuration of Plugins
 
 " Color theme
-if has('gui_running')
-	syntax enable
-	set background=dark
-	colorscheme solarized
-endif
+syntax enable
