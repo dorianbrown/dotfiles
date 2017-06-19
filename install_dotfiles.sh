@@ -8,6 +8,10 @@ sudo apt-get upgrade
 
 # Setup dotfiles
 
+# Configure git
+git config --global user.email "dorianstuartbrown@gmail.com"
+git config --global user.name "Dorian Brown"
+
 # Install R and Rstudio
 sudo apt-get install r-base
 wget https://download1.rstudio.org/rstudio-1.0.143-amd64.deb
