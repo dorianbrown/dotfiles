@@ -11,6 +11,7 @@ sudo apt-get upgrade
 # Configure git
 git config --global user.email "dorianstuartbrown@gmail.com"
 git config --global user.name "Dorian Brown"
+git clone http://github.com/dorianbrown/coding_projects.git
 
 # Install R and Rstudio
 sudo apt-get install r-base
@@ -45,7 +46,8 @@ sudo apt-get install tlp tlp-rdw
 sudo tlp start
 
 # Install packages
-sudo apt-get install vlc gnome-tweak-tool tmux nmon vim
+# Also need to add multiverse repository?
+sudo apt-get install vlc gnome-tweak-tool tmux nmon vim steam
 # Remove unneeded software
 
 sudo apt-get remove
