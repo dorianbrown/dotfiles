@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=emacs ~/notes.org
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Startup Orgmode
+Name=Startup Orgmode
+Comment[en_US]=
+Comment=

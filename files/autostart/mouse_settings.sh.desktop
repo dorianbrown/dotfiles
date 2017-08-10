@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=~/.startup_scripts/./mouse_settings.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=mouse settings
+Name=mouse settings
+Comment[en_US]=apply synaptic settings
+Comment=apply synaptic settings
