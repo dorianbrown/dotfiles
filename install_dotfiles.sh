@@ -8,20 +8,6 @@ popcorntime_url=https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.ta
 sudo apt-get update
 sudo apt-get upgrade
 
-# Symlink all dotfiles
-rm -rf ~/.config/autostart
-ln -s files/autostart ~/.config/autostart
-ln -s files/.bashrc ~/.bashrc
-ln -s files/.tmux.conf ~/.tmux.conf
-ln -s files/.vimrc ~/.vimrc
-ln -s files/notes.org ~/notes.org
-ln -s files/libinput-gestures.conf ~/.config/libinput-gestures.conf
-ln -s files/.bash_aliases ~/.bash_aliases
-
-# Setup system
-sudo apt-get install linux-image-4.11.0-13-generic linux-image-extra-4.11.0-13-generic intel-microcode
-sudo apt-get install nvidia-384 prime-indicator-plus
-
 # Add all PPA's
 for f in ppa:marutter/rrutter ppa:webupd8team/atom ppa:ubuntu-desktop/ubuntu-make ppa:linrunner/tlp ppa:snwh/pulp;
   do sudo add-apt-repository $f;
@@ -30,7 +16,7 @@ done
 sudo apt-get update
 
 # Install all apt packages
-sudo apt-get install r-base atom tlp tlp-rdw ubuntu-make arc-theme python-pip python-dev build-essential
+sudo apt-get install atom r-base tlp tlp-rdw ubuntu-make arc-theme python-pip python-dev build-essential chromium-browser
 
 # Setup pip
 sudo pip install --upgrade pip
@@ -46,20 +32,13 @@ rm rstudio-*.deb
 # Requirements tidyverse
 sudo apt-get install libxml2-dev libssl-dev libcurl4-openssl-dev
 
-# Install Chrome
-sudo apt-get install libxss1 libappindicator1 libindicator7
-wget $chrome_rul
-sudo dpkg -i google-chrome*.deb
-rm google-chrome*.deb
-
 # Remove games
 sudo apt-get remove aisleriot gnome-mahjongg gnome-mines gnome-sudoku
 
 # Install Steam
 wget -E $steam_url
 sudo dpkg -i steam.deb
-
-# TODO: Install atom packages through apm
+rm steam.deb
 
 # Run TLP
 sudo tlp start
@@ -75,21 +54,16 @@ cd libinput-gestures
 sudo ./libinput-gestures-setup install
 cd ..
 rm -rf libinput-gestures
-libinput-gestures-setup start
-libinput-gestures-setup autostart
 
 # Install developer tools
-sudo umake ide idea
 sudo umake ide pycharm
 
 # Icon theme
-sudo apt-get install paper-icon-theme
-sudo apt-get install paper-cursor-theme
-sudo apt-get install paper-gtk-theme
+sudo apt-get install paper-icon-theme paper-cursor-theme paper-gtk-theme
 
 # Create mouse startup script
-touch ~/.config/autostart/mouse_settings.sh
-cat > ~/.config/autostart/mouse_settings.sh << EOF
+touch ~/.config/startup_scripts/mouse_settings.sh
+cat > ~/.config/startup_scripts/mouse_settings.sh << EOF
 #!/bin/bash
 synclient PalmDetect=1 RightButtonAreaLeft=0 RightButtonAreaTop=0
 echo "Mouse settings applied!"
@@ -102,11 +76,32 @@ wget -E $popcorntime_url
 mkdir ~/Popcorn-Time
 tar xf Popcorn-Time-0.3.10-Linux-64.tar.xz -C Popcorn-Time
 
+# Symlink all dotfiles
+# TODO: delete current config files
+rm -rf ~/.config/autostart
+ln -s files/autostart ~/.config/autostart
+ln -s files/.bashrc ~/.bashrc
+ln -s files/.tmux.conf ~/.tmux.conf
+ln -s files/.vimrc ~/.vimrc
+ln -s files/notes.org ~/notes.org
+ln -s files/libinput-gestures.conf ~/.config/libinput-gestures.conf
+ln -s files/.bash_aliases ~/.bash_aliases
+
+chmod +x files/*.desktop
+
+# Add current user to input group
+sudo gpasswd -a $USER input
+
+# Log out and back in before running this
+libinput-gestures-setup start
+libinput-gestures-setup autostart
+
 # The manual stuff
 Set Windows + Interface to Ubuntu Medium/Regular size 10
 Monospace: Ubuntu Mono Regular size 13
 Set wallpaper to hexagon
 Install plugins
+  Extensions
   Alternatetab
   Applications menu
   Dash to Dock

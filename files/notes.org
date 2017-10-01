@@ -1,4 +1,4 @@
-*  Getting my coding on (analysing reddit comments dataset) ^_^
+* Getting my coding on (analysing reddit comments dataset) ^_^
 
 ** TODO Set-up database on external hard-drive
 So far mariadb has been giving problems since the external hard-drive folder
@@ -29,5 +29,4 @@ http://andyshora.com/easy-paper-js-tutorial.html
 http://paperjs.org/tutorials/
 
 ** Figure out how to post creations to blog
-
-* TODO Make 4.11.0.13 kernel default option (to allow graphics switching)
+* Fix audio not working on WD15 dock :(

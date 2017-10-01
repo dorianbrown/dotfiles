@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=~/.startup_scripts/./mouse_settings.sh
+Exec=~/.config/startup_scripts/./mouse_settings.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
