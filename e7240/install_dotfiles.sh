@@ -75,6 +75,11 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git config --global user.email "dorianstuartbrown@gmail.com"
 git config --global user.name "Dorian Brown"
 
+for repo in blog_posts js_posts translating_tools
+do
+    git clone https://github.com/dorianbrown/$repo ~/workspace/$repo
+done
+
 # The manual stuff
 #Set Windows + Interface to Ubuntu Medium/Regular size 10
 #Monospace: Ubuntu Mono Regular size 13
