@@ -7,5 +7,5 @@ alias gp="git pull"
 alias gc="git commit -m"
 alias gpo="git push origin"
 # Python virtualenvs
-alias py3="source ~/workspace/python3.6.3/bin/activate"
+alias py3="source ~/venvs/python3/bin/activate"
 alias sai="sudo apt install"

@@ -15,24 +15,17 @@ sudo apt-get update
 
 # Install all apt packages
 sudo apt-get install r-base tlp tlp-rdw ubuntu-make arc-theme python-pip
-python-dev build-essential xfonts-terminus
+python-dev build-essential xfonts-terminus gnome-terminal
 
 # Setup pip
 sudo pip install --upgrade pip
-sudo pip install --upgrade --user virtualenv
+sudo apt-get install virtualenv
 # Get python configured
-mkdir ~/workspace
-python_path="which python3"
-virtualenv -p ${python_path} ~/workspace/python3
+virtualenv -p /usr/bin/python3 ~/workspace/python3
 source ~/workspace/python3/bin/activate
 pip install pandas jupyter notebook scikit-learn seaborn bokeh
 deactivate
 
-# Install R and Rstudio
-wget https://download1.rstudio.org/rstudio-1.0.143-amd64.deb
-sudo apt-get install libjpeg62 libgstreamer0.10-0 libgstreamer-plugins-base0.10-0
-sudo dpkg -i rstudio-*.deb
-rm rstudio-*.deb
 # Requirements tidyverse
 sudo apt-get install libxml2-dev libssl-dev libcurl4-openssl-dev
 
@@ -58,14 +51,13 @@ mkdir ~/Popcorn-Time
 tar xf Popcorn-Time-0.3.10-Linux-64.tar.xz -C Popcorn-Time
 
 # Symlink all dotfiles
-# TODO: delete current config files
 for file in .bashrc .tmux.conf .vimrc .bash_aliases
 do
     if [ -f ~/${file}]
     then
         mv ~/${file} ~/${file}.copy
     fi
-    ln -s files/${file} ~/${file}
+    ln -s /home/$USER/workspace/dotfiles/e7240/files/${file} /home/$USER/${file}
 done
 
 # Install vundle
