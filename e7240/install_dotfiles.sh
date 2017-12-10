@@ -51,7 +51,7 @@ mkdir ~/Popcorn-Time
 tar xf Popcorn-Time-0.3.10-Linux-64.tar.xz -C Popcorn-Time
 
 # Symlink all dotfiles
-for file in .bashrc .tmux.conf .vimrc .bash_aliases
+for file in .bashrc .tmux.conf .vimrc .bash_aliases scratch.md
 do
     if [ -f ~/${file}]
     then
