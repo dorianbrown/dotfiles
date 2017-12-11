@@ -1,5 +1,11 @@
 #!/bin/bash
 
+full_install="False"
+if ["$1" -eq "minimal"]
+then
+    full_install="True"
+fi
+
 # Url's defintion
 popcorntime_url=https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
 
@@ -45,10 +51,14 @@ sudo umake ide pycharm
 # Icon theme
 sudo apt-get install paper-icon-theme paper-cursor-theme paper-gtk-theme
 
-# Install popcorn time
-wget -E $popcorntime_url
-mkdir ~/Popcorn-Time
-tar xf Popcorn-Time-0.3.10-Linux-64.tar.xz -C Popcorn-Time
+
+if [ full_install = "True" ]
+then
+    # Install popcorn time
+    wget -E $popcorntime_url
+    mkdir ~/Popcorn-Time
+    tar xf Popcorn-Time-0.3.10-Linux-64.tar.xz -C Popcorn-Time
+fi
 
 # Symlink all dotfiles
 for file in .bashrc .tmux.conf .vimrc .bash_aliases scratch.md
@@ -72,11 +82,14 @@ do
     git clone https://github.com/dorianbrown/$repo ~/workspace/$repo
 done
 
-# Install spotify
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update
-sudo apt-get install spotify-client
+if [ full_install = "True" ]
+then
+    # Install spotify
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+    echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+    sudo apt-get update
+    sudo apt-get install spotify-client
+fi
 
 # The manual stuff
 #Set Windows + Interface to Ubuntu Medium/Regular size 10
