@@ -37,6 +37,9 @@ set t_Co=256
 set background=dark
 colorscheme gruvbox
 
+" vim-rmarkdown options
+let g:pandoc#modules#disabled = ["folding"]
+
 " Proper python indentation
 set tabstop=4
 set softtabstop=4
