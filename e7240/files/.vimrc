@@ -21,6 +21,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'junegunn/goyo.vim'
 " Indent guides
 Plugin 'nathanaelkane/vim-indent-guides'
+" Nerd tree
+Plugin 'scrooloose/nerdtree'
 
 " Language Specific plugins
 " Python autocomplete for vim
