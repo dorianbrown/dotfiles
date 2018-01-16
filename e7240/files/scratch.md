@@ -3,8 +3,11 @@
 ## Knowledge Repo
 
 - Create LDAP implementation and add this
+    - Checkout flask-simpleldap (has working example with groups!)
 - Create merge request
 - Change CSS to ING house-style
+    - Change CSS files
+    - Change statics for logo's, default user profile
 - Use tribe for view-authorization:
     - See if we can get tribe from LDAP (use this to authorize post viewing)
     - Add tribe as property to User class (sqAlchemy addition in models.py)
