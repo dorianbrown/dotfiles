@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files_array=$(ls -A files)
+files_array=$(ls -A ../files)
 
 for file in ${files_array}
 do
@@ -10,6 +10,12 @@ do
         mv ${HOME}/${file} ${HOME}/${file}.copy
     fi
     echo "symlinking: ${file}"
-    ln -s ${HOME}/workspace/dotfiles/e7240/files/${file} ${HOME}/${file}
+    file_dir=$(readlink -f ../files)
+    ln -s ${file_dir}/${file} ${HOME}/${file}
 done
+
+echo '' >> ~/.bashrc 
+echo '# Loading personal bashrc' >> ~/.bashrc 
+echo 'source ~/.my_bashrc' >> ~/.bashrc 
+
 echo "done!"

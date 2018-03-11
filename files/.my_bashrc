@@ -1,0 +1,5 @@
+# Improve firefox scrolling
+export MOZ_USE_XINPUT2=1
+
+# Show current tasks
+task
