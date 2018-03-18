@@ -8,7 +8,10 @@ alias gc="git commit -m"
 alias gpo="git push origin"
 # Python virtualenvs
 alias py3="source ~/workspace/venvs/python3.5.2/bin/activate"
+alias kr="source ~/workspace/venvs/knowledge_repo/bin/activate"
 alias sai="sudo apt install"
+# Program shortcuts
+alias r=rtichoke
 # Task shortcuts
 alias t="task"
 alias ta="task add"

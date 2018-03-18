@@ -36,7 +36,7 @@ verbose=off
 
 # Report config
 column.padding=2
-row.padding=3
+row.padding=2
 
 # Color theme overrides
 fontunderline=off

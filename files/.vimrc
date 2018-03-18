@@ -11,8 +11,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 " Color scheme
 Plugin 'morhetz/gruvbox'
-" Statusbar
-Plugin 'vim-airline/vim-airline'
 " Focus mode (:Goyo)
 Plugin 'junegunn/goyo.vim'
 " Indent guides
@@ -32,7 +30,9 @@ call vundle#end()            " required
 
 filetype plugin indent on    " required
 set t_Co=256
+set t_ut= " Solve tmux background color weirdness
 set background=dark
+colorscheme gruvbox
 
 " vim-rmarkdown options
 let g:pandoc#modules#disabled = ["folding"]
@@ -51,8 +51,8 @@ set encoding=utf-8
 let python_highlight_all=1
 syntax on
 " Line numbering
-set ruler
-set number
+" set noruler
+" set number
 " CtrlP binding
 let g:ctrlp_map = '<c-p>'
 " Remove backup and swap files

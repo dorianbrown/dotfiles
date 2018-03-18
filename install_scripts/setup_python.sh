@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install python-dev python-pip virtualenv
+sudo apt -y install python-dev python-pip virtualenv
 sudo pip install --upgrade pip
 
 version=$(python3 --version | tr -d [:space:] | tr [:upper:] [:lower:])
