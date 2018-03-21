@@ -9,6 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 " File switching
 Plugin 'kien/ctrlp.vim'
+" Statusbar
+Plugin 'vim-airline/vim-airline'
 " Color scheme
 Plugin 'morhetz/gruvbox'
 " Focus mode (:Goyo)
@@ -16,7 +18,7 @@ Plugin 'junegunn/goyo.vim'
 " Indent guides
 Plugin 'nathanaelkane/vim-indent-guides'
 " Nerd tree
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 
 " Language Specific plugins
 " Python autocomplete for vim
@@ -51,8 +53,8 @@ set encoding=utf-8
 let python_highlight_all=1
 syntax on
 " Line numbering
-" set noruler
-" set number
+set noruler
+set number
 " CtrlP binding
 let g:ctrlp_map = '<c-p>'
 " Remove backup and swap files

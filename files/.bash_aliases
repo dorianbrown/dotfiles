@@ -6,8 +6,9 @@ alias gst="git status"
 alias gp="git pull"
 alias gc="git commit -m"
 alias gpo="git push origin"
+alias gd="git diff"
 # Python virtualenvs
-alias py3="source ~/workspace/venvs/python3.5.2/bin/activate"
+alias py3="source ~/workspace/venvs/python3/bin/activate"
 alias kr="source ~/workspace/venvs/knowledge_repo/bin/activate"
 alias sai="sudo apt install"
 # Program shortcuts
