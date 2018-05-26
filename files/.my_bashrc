@@ -8,4 +8,4 @@ export MOZ_USE_XINPUT2=1
 export KNOWLEDGE_REPO=~/.test_kr
 
 # Show current tasks
-task
+task ls
