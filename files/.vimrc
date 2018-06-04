@@ -45,7 +45,7 @@ colorscheme gruvbox
 
 " vim-rmarkdown options
 let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#syntax#conceal#use=0
+" let g:pandoc#syntax#conceal#use=0
 
 " Proper python indentation
 set tabstop=4
@@ -69,6 +69,8 @@ let g:ctrlp_map = '<c-p>'
 set nobackup
 set nowb
 set noswapfile
+set showcmd
+set incsearch
 
 " Set split directions to sensical defaults
 set splitbelow
