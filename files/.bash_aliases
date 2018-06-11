@@ -5,6 +5,9 @@ alias tmux="tmux -u -2"
 alias ll="ls -l"
 alias la="ls -a"
 
+# Fedora aliases
+alias sdi="sudo dnf install"
+
 # Git aliases
 alias gaa="git add --all"
 alias gst="git status --short"
@@ -20,7 +23,6 @@ alias py3="source ~/workspace/venvs/python3/bin/activate"
 alias kr="source ~/workspace/venvs/knowledge_repo/bin/activate"
 
 # Program shortcuts
-alias r="rtichoke"
 alias lab="jupyter lab"
 
 # Task shortcuts

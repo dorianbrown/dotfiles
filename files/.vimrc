@@ -24,9 +24,26 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " Avoid auto indenting during paste
 Plugin 'ConradIrwin/vim-bracketed-paste'
 " Adds hex and rgb color highlighting
-Plugin 'etdev/vim-hexcolor'
+Plugin 'ap/vim-css-color'
 
-" Language Specific plugins
+" Rust Stuff
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'cespare/vim-toml'
+Plugin 'maralla/vim-toml-enhance'
+let g:racer_cmd = '~/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+
+" Leader remapping
+let mapleader = "\<Space>"
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" Run mapping
+au FileType rust nmap <C-x> :! cargo run<CR>
+au FileType python nmap <C-x> :! python %<CR>
 
 " Python autocomplete for vim
 Plugin 'maralla/completor.vim'
@@ -62,7 +79,7 @@ let python_highlight_all=1
 syntax on
 " Line numbering
 set noruler
-set number relativenumber
+set number
 " CtrlP binding
 let g:ctrlp_map = '<c-p>'
 " Remove backup and swap files
