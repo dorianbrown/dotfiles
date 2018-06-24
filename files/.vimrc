@@ -25,6 +25,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 " Adds hex and rgb color highlighting
 Plugin 'ap/vim-css-color'
+" Preview find-replace commands
+Plugin 'markonm/traces.vim'
 
 " Rust Stuff
 Plugin 'rust-lang/rust.vim'
@@ -44,6 +46,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " Run mapping
 au FileType rust nmap <C-x> :! cargo run<CR>
 au FileType python nmap <C-x> :! python %<CR>
+vnoremap r :w !bash<CR>
 
 " Python autocomplete for vim
 Plugin 'maralla/completor.vim'
@@ -63,6 +66,10 @@ colorscheme gruvbox
 " vim-rmarkdown options
 let g:pandoc#modules#disabled = ["folding"]
 " let g:pandoc#syntax#conceal#use=0
+
+" Gnome specific cursors
+let &t_SI = "\e[6 q" " Vertical bar in insert mode
+let &t_EI = "\e[2 q" " Block in normal mode
 
 " Proper python indentation
 set tabstop=4
@@ -88,6 +95,10 @@ set nowb
 set noswapfile
 set showcmd
 set incsearch
+
+" Make folding more subtle
+highlight Folded ctermfg=240 ctermbg=235
+set fillchars=fold:\  
 
 " Set split directions to sensical defaults
 set splitbelow

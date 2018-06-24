@@ -42,10 +42,6 @@ function gacp {
     eval $cmd
 }
 
-function nbslides {
-    jupyter nbconvert "$1" --to slides --post serve
-}
-
 function tan {
     id=$1
     text=$2
