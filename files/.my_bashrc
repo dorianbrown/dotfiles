@@ -1,28 +1,29 @@
 # Awesome looking prompt
 
-# TODO: Make colors into variables
-# Get rid of the prompt function, and use PS1+=PS1 with export PS1 at the end
+function GIT_COLOR {
+
+    local git_status="$(git status 2> /dev/null)"
+
+    if [[ $git_status = *"Your branch is ahead"* ]]; then
+        echo -e "\033[1;93m"
+    elif [[ $git_status = *"Changes not staged"* ]]; then
+        echo -e "\033[1;31m"
+    elif [[ $git_status = *"Untracked files"* ]]; then
+        echo -e "\033[1;31m"
+    else
+        echo -e "\033[1;32m"
+    fi
+}
 
 function my_prompt {
 
-    local git_status="$(git status 2> /dev/null)"
- 
-    if [[ $git_status = *"Your branch is ahead"* ]]; then
-        GIT_COLOR="\033[1;93m"
-    elif [[ $git_status = *"Changes not staged"* ]]; then
-        GIT_COLOR="\\[\033[1;31m\]"
-    elif [[ $git_status = *"Untracked files"* ]]; then
-        GIT_COLOR="\[\033[1;31m\]"
-    else
-        GIT_COLOR="\[\033[1;32m\]"
-    fi
-
-    local user_and_host="\[\033[01;32m\]\u@\h"
-    local cur_location="\[\033[01;34m\]\w"
-    local GIT_BRANCH='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
-    local prompt_tail="\[\033[35m\]\$"
-    local last_color="\[\033[00m\]"
-    export PS1="$user_and_host $cur_location $GIT_COLOR$GIT_BRANCH$prompt_tail$last_color "
+    PS1="\[\033[01;32m\]\u@\h "
+    PS1+="\[\033[01;34m\]\w "
+    PS1+="\[\$(GIT_COLOR)\]"
+    PS1+='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+    PS1+="\[\033[35m\]\$ "
+    PS1+="\[\033[00m\]"
+    export PS1
 }
 my_prompt
 
