@@ -27,6 +27,8 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'ap/vim-css-color'
 " Preview find-replace commands
 Plugin 'markonm/traces.vim'
+" Highlighting csv files
+Plugin 'mechatroner/rainbow_csv'
 
 " Rust Stuff
 Plugin 'rust-lang/rust.vim'
