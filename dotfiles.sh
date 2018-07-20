@@ -10,7 +10,7 @@ do
         mv ${HOME}/${file} ${HOME}/${file}.copy
     fi
     echo "symlinking: [${file_dir}/${file}] -> [${HOME}/${file}]"
-    file_dir=$(readlink -f ../files)
+    file_dir=$(readlink -f files)
     ln -s ${file_dir}/${file} ${HOME}/${file}
 done
 
