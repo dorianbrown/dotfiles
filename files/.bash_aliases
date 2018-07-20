@@ -34,6 +34,7 @@ alias serve="bundle exec jekyll serve"
 
 # SSH Shortcuts
 alias ssh_aws="ssh -i ~/keys/iaa_aws.pem ec2-user@18.184.26.99"
+alias ssh_globetrotter="ssh -i ~/keys/dorian_laptop.pem ubuntu@18.184.26.99"
 
 ## Functions
 

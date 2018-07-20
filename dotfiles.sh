@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files_array=$(ls -A ../files)
+files_array=$(ls -A files)
 
 for file in ${files_array}
 do
@@ -9,7 +9,7 @@ do
         echo "Creating backup: ${HOME}/${file}.copy"
         mv ${HOME}/${file} ${HOME}/${file}.copy
     fi
-    echo "symlinking: ${file}"
+    echo "symlinking: [${file_dir}/${file}] -> [${HOME}/${file}]"
     file_dir=$(readlink -f ../files)
     ln -s ${file_dir}/${file} ${HOME}/${file}
 done
