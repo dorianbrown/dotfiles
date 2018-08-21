@@ -29,6 +29,10 @@ Plugin 'ap/vim-css-color'
 Plugin 'markonm/traces.vim'
 " Highlighting csv files
 Plugin 'mechatroner/rainbow_csv'
+" Autoclose (/{/etc
+Plugin 'townk/vim-autoclose'
+" Autoclose html tags
+Plugin 'alvan/vim-closetag'
 
 " Rust Stuff
 Plugin 'rust-lang/rust.vim'
@@ -46,9 +50,10 @@ let mapleader = "\<Space>"
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Run mapping
-au FileType rust nmap <C-x> :! cargo run<CR>
-au FileType python nmap <C-x> :! python %<CR>
-vnoremap r :w !bash<CR>
+au FileType rust nmap <C-x> :w ! cargo run<CR>
+au FileType python nmap <C-x> :w ! python<CR>
+au FileType python vnoremap r :w ! python<CR>
+au FileType r nmap <C-x> :w ! R --vanilla -q<CR>
 
 " Python autocomplete for vim
 Plugin 'maralla/completor.vim'
@@ -130,3 +135,19 @@ augroup filetypedetect
     au BufRead,BufNewFile *.Rmd set filetype=rmarkdown
     " associate *.foo with php filetype
 augroup END
+
+"basic tab spacing for html, css and js
+au BufNewFile,BufRead *.html,*.css
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+
+" Prevents delay after ESC in insert mode
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif

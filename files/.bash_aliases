@@ -34,18 +34,15 @@ alias serve="bundle exec jekyll serve"
 
 # SSH Shortcuts
 alias ssh_aws="ssh -i ~/keys/iaa_aws.pem ec2-user@18.184.26.99"
-alias ssh_globetrotter="ssh -i ~/keys/dorian_laptop.pem ubuntu@18.184.26.99"
+alias ssh_globetrotter_root="ssh -i ~/keys/dorian_laptop.pem ubuntu@18.184.26.99"
+alias ssh_ttd="ssh dorian@35.158.254.158"
+
+# Docker-compose
+alias dc="docker-compose"
 
 ## Functions
 
 function gacp {
     cmd="git add --all; git commit -m '$1'; git push origin $2"
-    eval $cmd
-}
-
-function tan {
-    id=$1
-    text=$2
-    cmd="task ${id} annotate '${text}'"
     eval $cmd
 }
