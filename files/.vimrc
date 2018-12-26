@@ -5,6 +5,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Surrounding quotes
+Plugin 'tpope/vim-surround'
 " Comment toggling vim
 Plugin 'scrooloose/nerdcommenter'
 " plugin on GitHub repo
@@ -52,6 +54,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " Run mapping
 au FileType rust nmap <C-x> :w ! cargo run<CR>
 au FileType python nmap <C-x> :w ! python<CR>
+au FileType python nmap <C-i> :w ! bpython -i %<CR>
 au FileType python vnoremap r :w ! python<CR>
 au FileType r nmap <C-x> :w ! R --vanilla -q<CR>
 
@@ -129,6 +132,9 @@ filetype indent on
 
 " Limelight
 let g:limelight_conceal_ctermfg = 240
+
+" Create shortcut for Goyo and Limelight
+:command Focus Goyo | Limelight!!
 
 " Filetype specific settings
 augroup filetypedetect
