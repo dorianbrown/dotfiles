@@ -68,3 +68,5 @@ function gacp {
     cmd="git add --all; git commit -m '$1'; git push origin $2"
     eval $cmd
 }
+
+alias debug="python -m ipdb -c continue"
