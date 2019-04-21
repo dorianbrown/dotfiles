@@ -36,6 +36,10 @@ Plugin 'townk/vim-autoclose'
 " Autoclose html tags
 Plugin 'alvan/vim-closetag'
 
+" Go Stuff
+Plugin 'fatih/vim-go'
+au FileType go nmap <C-x> :GoRun<CR>
+
 " Rust Stuff
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
@@ -57,6 +61,7 @@ au FileType python nmap <C-x> :w ! python<CR>
 au FileType python nmap <C-i> :w ! bpython -i %<CR>
 au FileType python vnoremap r :w ! python<CR>
 au FileType r nmap <C-x> :w ! R --vanilla -q<CR>
+au FileType lisp nmap <C-x> :w ! ./%<CR>
 
 " Python autocomplete for vim
 Plugin 'maralla/completor.vim'

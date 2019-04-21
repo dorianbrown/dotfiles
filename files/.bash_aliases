@@ -16,6 +16,7 @@ alias gc="git commit -m"
 alias gpo="git push origin"
 alias gd="git diff"
 alias glo="git log --oneline"
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Python virtualenvs
 alias py3="source ~/workspace/venvs/python3/bin/activate"
@@ -51,10 +52,13 @@ function publish {
 }
 
 # SSH Shortcuts
-alias ssh_aws="ssh -i ~/keys/iaa_aws.pem ec2-user@18.184.26.99"
-alias ssh_globetrotter_root="ssh -i ~/keys/dorian_laptop.pem ubuntu@18.184.26.99"
-alias ssh_walts="ssh -i ~/keys/walts.pem ec2-user@18.185.229.24"
-alias ssh_ttd="ssh dorian@35.158.254.158"
+alias ssh_ewsai="gcloud compute ssh tensorflow-python-cuda-minilab-1-vm -- -L 7000:localhost:7000"
+alias ssh_rc="ssh dorian@40.118.45.229"
+
+function gsp {
+    cmd="gcloud compute ssh $1 -- -L $2:localhost:$2"
+    eval $cmd
+}
 
 # Docker-compose
 alias dc="docker-compose"
@@ -70,3 +74,5 @@ function gacp {
 }
 
 alias debug="python -m ipdb -c continue"
+
+alias t="todo.sh"

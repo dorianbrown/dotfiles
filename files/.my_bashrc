@@ -29,6 +29,3 @@ my_prompt
 
 # Improve firefox scrolling
 export MOZ_USE_XINPUT2=1
-
-# Repo location for knowledge_repo
-export KNOWLEDGE_REPO=~/.test_kr
