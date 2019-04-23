@@ -1,7 +1,15 @@
 #!/bin/bash
 
 # Adding PPAs
-sudo add-apt-repository -y ppa:geary-team/releases ppa:pmjdebruijn/darktable-release ppa:serge-rider/dbeaver-ce ppa:dhor/myway ppa:webupd8team/atom ppa:lutris-team/lutris ppa:snwh/ppa ppa:libreoffice/ppa ppa:inkscape.dev/stable
+sudo add-apt-repository -y ppa:geary-team/releases 
+sudo add-apt-repository -y ppa:pmjdebruijn/darktable-release 
+sudo add-apt-repository -y ppa:serge-rider/dbeaver-ce 
+sudo add-apt-repository -y ppa:dhor/myway 
+sudo add-apt-repository -y ppa:webupd8team/atom 
+sudo add-apt-repository -y ppa:lutris-team/lutris 
+sudo add-apt-repository -y ppa:snwh/ppa 
+sudo add-apt-repository -y ppa:libreoffice/ppa 
+sudo add-apt-repository -y ppa:inkscape.dev/stable
 
 # Adding other sources
 # Spotify
@@ -13,4 +21,4 @@ sudo add-apt-repository 'deb https://typora.io/linux ./'
 
 # Installing
 sudo apt -y update
-sudo apt -y install spotify-client geary darktable dbeaver-ce gpick gimp htop atom vim lutris paper-icon-theme arc-theme libreoffice inkscape
+sudo apt -y install spotify-client geary darktable dbeaver-ce gpick gimp htop atom vim lutris paper-icon-theme arc-theme libreoffice tmux vlc
