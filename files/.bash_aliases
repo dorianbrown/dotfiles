@@ -65,6 +65,7 @@ alias dc="docker-compose"
 
 # Conda
 alias sa="source activate"
+alias sd="conda deactivate"
 
 ## Functions
 
@@ -74,5 +75,3 @@ function gacp {
 }
 
 alias debug="python -m ipdb -c continue"
-
-alias t="todo.sh"

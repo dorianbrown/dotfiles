@@ -30,7 +30,7 @@ Plugin 'ap/vim-css-color'
 " Preview find-replace commands
 Plugin 'markonm/traces.vim'
 " Highlighting csv files
-Plugin 'mechatroner/rainbow_csv'
+" Plugin 'mechatroner/rainbow_csv'
 " Autoclose (/{/etc
 Plugin 'townk/vim-autoclose'
 " Autoclose html tags
@@ -58,6 +58,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " Run mapping
 au FileType rust nmap <C-x> :w ! cargo run<CR>
 au FileType python nmap <C-x> :w ! python<CR>
+au FileType sh nmap <C-x> :w ! bash<CR>
 au FileType python nmap <C-i> :w ! bpython -i %<CR>
 au FileType python vnoremap r :w ! python<CR>
 au FileType r nmap <C-x> :w ! R --vanilla -q<CR>
@@ -65,6 +66,10 @@ au FileType lisp nmap <C-x> :w ! ./%<CR>
 
 " Python autocomplete for vim
 Plugin 'maralla/completor.vim'
+" completor configuration
+"let g:completor_def_split = 'split'
+noremap <silent> <leader>d :call completor#do('definition')<CR>
+noremap <silent> <leader>c :call completor#do('doc')<CR>
 " Rmarkdown stuff
 Plugin 'vim-pandoc/vim-rmarkdown'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
