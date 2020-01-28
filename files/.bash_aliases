@@ -52,8 +52,7 @@ function publish {
 }
 
 # SSH Shortcuts
-alias ssh_ewsai="gcloud compute ssh tensorflow-python-cuda-minilab-1-vm -- -L 7000:localhost:7000"
-alias ssh_rc="ssh dorian@40.118.45.229"
+alias ssh_egpu="ssh dorian@86.87.229.189 -p 3141"
 
 function gsp {
     cmd="gcloud compute ssh $1 -- -L $2:localhost:$2"

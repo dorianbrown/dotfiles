@@ -4,7 +4,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 " Surrounding quotes
 Plugin 'tpope/vim-surround'
 " Comment toggling vim
@@ -17,6 +16,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 " Color scheme
 Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
 " Focus mode (:Goyo)
 Plugin 'junegunn/goyo.vim'
 " Focus on paragraph
@@ -35,25 +35,19 @@ Plugin 'markonm/traces.vim'
 Plugin 'townk/vim-autoclose'
 " Autoclose html tags
 Plugin 'alvan/vim-closetag'
+" Better syntax higlighting and indentation
+"Plugin 'sheerun/vim-polyglot'
+" Python autocomplete
+Plugin 'maralla/completor.vim'
 
-" Go Stuff
-Plugin 'fatih/vim-go'
-au FileType go nmap <C-x> :GoRun<CR>
-
-" Rust Stuff
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'cespare/vim-toml'
-Plugin 'maralla/vim-toml-enhance'
-let g:racer_cmd = '~/.cargo/bin/racer'
-let g:racer_experimental_completer = 1
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
+call vundle#end()
 
 " Leader remapping
 let mapleader = "\<Space>"
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" Completor options
+noremap <silent> <leader>d :call completor#do('definition')<CR>
 
 " Run mapping
 au FileType rust nmap <C-x> :w ! cargo run<CR>
@@ -63,19 +57,6 @@ au FileType python nmap <C-i> :w ! bpython -i %<CR>
 au FileType python vnoremap r :w ! python<CR>
 au FileType r nmap <C-x> :w ! R --vanilla -q<CR>
 au FileType lisp nmap <C-x> :w ! ./%<CR>
-
-" Python autocomplete for vim
-Plugin 'maralla/completor.vim'
-" completor configuration
-"let g:completor_def_split = 'split'
-noremap <silent> <leader>d :call completor#do('definition')<CR>
-noremap <silent> <leader>c :call completor#do('doc')<CR>
-" Rmarkdown stuff
-Plugin 'vim-pandoc/vim-rmarkdown'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vim-pandoc/vim-pandoc'
-
-call vundle#end()
 
 filetype plugin indent on
 set t_Co=256
@@ -145,12 +126,6 @@ let g:limelight_conceal_ctermfg = 240
 
 " Create shortcut for Goyo and Limelight
 :command Focus Goyo | Limelight!!
-
-" Filetype specific settings
-augroup filetypedetect
-    au BufRead,BufNewFile *.Rmd set filetype=rmarkdown
-    " associate *.foo with php filetype
-augroup END
 
 "basic tab spacing for html, css and js
 au BufNewFile,BufRead *.html,*.css
