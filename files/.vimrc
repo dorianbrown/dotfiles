@@ -48,6 +48,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Completor options
 noremap <silent> <leader>d :call completor#do('definition')<CR>
+noremap <silent> <leader>c :call completor#do('doc')<CR>
 
 " Run mapping
 au FileType rust nmap <C-x> :w ! cargo run<CR>
