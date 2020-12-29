@@ -26,6 +26,3 @@ function my_prompt {
     export PS1
 }
 my_prompt
-
-# Improve firefox scrolling
-export MOZ_USE_XINPUT2=1
