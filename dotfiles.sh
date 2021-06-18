@@ -23,4 +23,7 @@ echo 'source ~/.bash_aliases' >> ~/.bashrc
 echo "Cloning vundle repository from github"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+echo "Caching fonts"
+fc-cache -fv
+
 echo "done!"
