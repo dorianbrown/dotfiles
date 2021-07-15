@@ -24,6 +24,18 @@ function start_minikube {
 
 }
 
+kc-pipe() {
+   POD=$(kubectl get pods | grep kafkacat | grep Running | awk '{print $1}')
+   [[ -z ${POD} ]] && echo "No kafkacat pod found." && exit 1
+   kubectl exec -i ${POD} -- kc "$@"
+}
+
+kc() {
+   POD=$(kubectl get pods | grep kafkacat | grep Running | awk '{print $1}')
+   [[ -z ${POD} ]] && echo "No kafkacat pod found." && exit 1
+   kubectl exec -t ${POD} -- kc -C "$@"
+}
+
 function my_prompt {
 
     PS1="\[\033[01;32m\]\u@\h "
