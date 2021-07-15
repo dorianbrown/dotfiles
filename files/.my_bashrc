@@ -15,6 +15,15 @@ function GIT_COLOR {
     fi
 }
 
+function start_minikube {
+    
+    minikube start \
+        --cpus=2 --disk-size=40Gi --memory=6Gi \
+        --kubernetes-version=v1.17.6 \
+        --insecure-registry minikube 127.0.0.1:5000 \
+
+}
+
 function my_prompt {
 
     PS1="\[\033[01;32m\]\u@\h "
