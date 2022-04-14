@@ -50,3 +50,6 @@ my_prompt
 
 # Enables faster docker builds
 export DOCKER_BUILDKIT=1
+
+# Loading work_bashrc
+source .work_bashrc
