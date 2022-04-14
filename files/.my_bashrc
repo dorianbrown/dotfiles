@@ -18,8 +18,7 @@ function GIT_COLOR {
 function start_minikube {
     
     minikube start \
-        --cpus=2 --disk-size=40Gi --memory=6Gi \
-        --kubernetes-version=v1.17.6 \
+        --cpus=4 --disk-size=40Gi \
         --insecure-registry minikube 127.0.0.1:5000 \
 
 }
@@ -47,3 +46,6 @@ function my_prompt {
     export PS1
 }
 my_prompt
+
+# Enables faster docker builds
+export DOCKER_BUILDKIT=1
