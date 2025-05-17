@@ -62,8 +62,8 @@ au FileType lisp nmap <C-x> :w ! ./%<CR>
 filetype plugin indent on
 set t_Co=256
 set t_ut= " Solve tmux background color weirdness
-set background=dark
-colorscheme gruvbox
+"set background=dark
+"colorscheme gruvbox
 
 " vim-rmarkdown options
 let g:pandoc#modules#disabled = ["folding"]
